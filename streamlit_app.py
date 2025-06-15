@@ -29,7 +29,7 @@ if uploaded_file is not None:
     try:
         img_array = preprocess_image(image)
 
-        with st.spinner("Analyzing toothbrush quality..."):
+        with st.spinner("Analyzing worker compliance..."):
             output = model(img_array)  # returns dict
             prediction = output["sequential_11"].numpy()  # extract tensor
     
