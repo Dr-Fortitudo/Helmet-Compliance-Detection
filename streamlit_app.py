@@ -20,8 +20,12 @@ def preprocess_image(image):
     return img_array
 
 if uploaded_file is not None:
-    image = Image.open(uploaded_file)
-    st.image(image, caption="Uploaded Image", use_container_width=True)
+    try:
+        image = Image.open(uploaded_file)
+        image = image.convert("RGB")  # Ensure it's in a displayable format
+        st.image(image, caption="Uploaded Image", use_container_width=True)
+    except Exception as e:
+        st.error(f"Failed to load image. Error: {e}")
 
     try:
         img_array = preprocess_image(image)
