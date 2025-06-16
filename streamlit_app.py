@@ -36,7 +36,7 @@ if uploaded_file is not None:
             predicted_class = class_names[np.argmax(prediction)]
             confidence = np.max(prediction) * 100
 
-        if predicted_class == "ON Helmet":
+        if predicted_class == "NO Helmet":
             st.markdown(
                 f"<h3 style='color: green;'>✅ Verdict: Worker in Compliance ({confidence:.2f}% confidence)</h3>",
                 unsafe_allow_html=True
