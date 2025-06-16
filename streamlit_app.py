@@ -23,7 +23,7 @@ if uploaded_file is not None:
     try:
         image = Image.open(uploaded_file)
         image = image.convert("RGB")  # Ensure it's in a displayable format
-        st.image(image, caption="Uploaded Image")
+        st.image(image, caption="Uploaded Image", width=400)
     except Exception as e:
         st.error(f"Failed to load image. Error: {e}")
 
